@@ -1,4 +1,4 @@
-from nose.tools import assert_equal 
+
 from diffusion_model import energy
 from particlechange import moveparticle 
 
