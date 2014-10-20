@@ -5,6 +5,9 @@ from random import random
 
 def compare(density,T):
     
+    if T<=0:
+        raise TypeError ("Temperature should be strictly positive.")
+        
     passdensity = density
     faildensity = density
     E1 = energy(density,coefficient=1)
