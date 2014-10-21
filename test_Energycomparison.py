@@ -21,4 +21,4 @@ def test_P_lies_in_correct_interval():
     E3 = E2-E1
     if E3 >= 0:
         P=exp(-divide(E3,T))
-    assert P>= 0
+    assert (P>= 0 and 1>=P)
