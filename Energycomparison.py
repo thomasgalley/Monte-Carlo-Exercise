@@ -8,14 +8,21 @@ def compare(density,T):
     if T<=0:
         raise TypeError ("Temperature should be strictly positive.")
         
-    passdensity = density
-    faildensity = density
+    passdensity = moveparticle(density)
+    
+    #we define two new arrays both equal to the input density
+    
     E1 = energy(density,coefficient=1)
-    E2 = energy(moveparticle(passdensity),coefficient=1)
+    E2 = energy(passdensity,coefficient=1)
+    
+    # the output of moveparticle(passdensity) is passdensity which is now different from density
+    
     E3 = E2-E1
     #need to make sure T is not 0 via raise error type message
+    
     if E3<0:
         density=passdensity
+        #in this case we want the compare function to return the density for a particle having moved
         
     else:
         P=exp(-divide(E3,T))
@@ -25,6 +32,7 @@ def compare(density,T):
             density=passdensity
             
         else:
-            density=faildensity
+            density=density
+            #in this case we want the function compare to return the initial imput density (the particle hasn't moved)
         
     return density
