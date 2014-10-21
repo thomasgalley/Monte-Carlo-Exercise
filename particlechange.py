@@ -11,27 +11,26 @@ def moveparticle(density):
     
         g=choice([-1,1])
     
-    # in the following loop we want to add a particle to either the left or the right of the position, in order to avoid list size errors 
+# in the following loop we want to add a particle to either the left or the right of the position, in order to avoid list size errors 
     #we account for several extremum cases
     
         if len(density) != 1:
-        # in the case of there being a single entry the particle has moved outside the array and we cannot add it to either side
+ # we do not move a particle if the array is of size 1 (i.e it exits the array)
     
         
            if r == 0:
               if g==1:
                  density[r+g]=density[r+g]+1
           
-          #in the case of moving the particle from the first entry, it either moves to the right or outside the array 
+ #in the case of moving the particle from the first entry, it either moves to the right or outside the array 
     
            elif r==(len(density)-1):
               if g== -1:
                   density[r+g]=density[r+g]+1
-          # similarly for the particles on the other end of the array
+# similarly for the particles on the other end of the array
            else:
                density[r+g]=density[r+g]+1
         
-        #do a test to check that if r is 0 and g is -1 the program runs without giving a "not in list" error same if r is last entry 
-        # and g is 1
+       
     
     return density 
