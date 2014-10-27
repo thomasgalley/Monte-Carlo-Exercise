@@ -1,4 +1,3 @@
-# do a test for a really simple energy function to see if get right difference
 
 from Energycomparison import compare
 from diffusion_model import energy 
